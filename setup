@@ -22,8 +22,10 @@ rm -f config.toml
 cat >hugo.toml <<'EOF'
 baseURL = "http://localhost:1313/"
 title = "My New Hugo Site"
-paginate = 5
 theme = "PaperMod"
+
+[pagination]
+  pagerSize = 5
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -177,3 +179,8 @@ Remember to:
    git config user.email "your.email@example.com"
    git config user.name "Your Name"
 '
+$()$(
+
+    And the README.md should be updated to reflect the theme change from Ananke to PaperMod:
+
+)$()text

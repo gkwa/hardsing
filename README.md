@@ -33,7 +33,7 @@ Site name parameter is optional and defaults to "my-hugo-site"
 
 ## Features
 
-- Automated Hugo site creation with Ananke theme
+- Automated Hugo site creation with PaperMod theme
 - Git initialization and configuration
 - GitHub Actions CI/CD workflow
 - Just commands for code formatting
@@ -49,7 +49,7 @@ Site name parameter is optional and defaults to "my-hugo-site"
 │   ├── about/         # About page
 │   └── posts/         # Blog posts
 ├── themes/            # Hugo themes
-│   └── ananke/       # Default theme
+│   └── PaperMod/     # Default theme
 └── hugo.toml          # Site configuration
 ```
 
