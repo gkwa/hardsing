@@ -4,10 +4,9 @@ Scripts to automate creating and managing Hugo static sites with GitHub Pages de
 
 View the source code:
 
+- [repo](https://github.com/gkwa/hardsing)
 - [setup script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/setup) - Creates new Hugo site with theme and initial content
-- [teardown script](https://github.com/gkwa/hardsing?tab=readme-ov-file#hugo-site-generator-scripts) - Removes Hugo site directory
-
-Original repository: https://github.com/axelerator/claude.ai-learning-hugo
+- [teardown script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/teardown) - Removes Hugo site directory
 
 ## Prerequisites
 
