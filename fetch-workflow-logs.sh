@@ -2,9 +2,14 @@
 
 set -euo pipefail
 
-# Workflow run ID
-RUN_ID="11826642215"
+# Repo name
 REPO="gkwa/hardsing"
+
+# Get the latest workflow run ID
+echo "Fetching latest workflow run ID..."
+RUN_ID=$(gh run list --repo "$REPO" --limit 1 --json databaseId --jq '.[0].databaseId')
+
+echo "Latest workflow run ID: ${RUN_ID}"
 
 # Create logs directory
 mkdir -p workflow-logs
