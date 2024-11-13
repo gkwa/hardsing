@@ -20,21 +20,8 @@ rm -f config.toml
 
 # Create comprehensive hugo.toml configuration
 cat >hugo.toml <<EOF
-baseURL = "https://gkwa.github.io/hardsing/my-hugo-site/"  # Change to match your GitHub Pages URL
 title = "My New Hugo Site"
 theme = "PaperMod"
-
-[pagination]
- pagerSize = 5
-
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
-
-[minify]
-disableXML = true
-minifyOutput = true
 
 [params]
 env = "production"
@@ -54,22 +41,22 @@ ShowWordCount = true
 ShowRssButtonInSectionTermList = true
 UseHugoToc = true
 
- [params.homeInfoParams]
- Title = "Welcome 👋"
- Content = "My Hugo blog"
+  [params.homeInfoParams]
+  Title = "Welcome 👋"
+  Content = "My Hugo blog"
 
- [params.profileMode]
- enabled = false
- title = "PaperMod"
- subtitle = "Welcome to my blog"
- 
- [[params.socialIcons]]
- name = "github"
- url = "https://github.com/"
+  [params.profileMode]
+  enabled = false
+  title = "PaperMod"
+  subtitle = "Welcome to my blog"
+  
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
 
- [[params.socialIcons]]
- name = "twitter"
- url = "https://twitter.com/"
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/"
 
 [menu]
 main = [
@@ -139,11 +126,8 @@ summary: archives
 ---
 EOF
 
-# Clean any existing generated files
-rm -rf public/ resources/ .hugo_build.lock
-
-# Initial build
-hugo --minify
+# Create .nojekyll file
+touch .nojekyll
 
 # Initialize git repository and commit
 git add .
