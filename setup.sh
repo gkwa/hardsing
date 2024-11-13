@@ -20,7 +20,7 @@ rm -f config.toml
 
 # Create comprehensive hugo.toml configuration
 cat >hugo.toml <<'EOF'
-baseURL = "http://localhost:1313/"
+baseURL = "https://gkwa.github.io/hardsing/"
 title = "My New Hugo Site"
 theme = "PaperMod"
 
@@ -152,7 +152,7 @@ git config user.name "Your Name"
 git commit -m "Initial Hugo site with PaperMod theme"
 
 # Print success message and next steps
-cat <<'EOF'
+cat <<EOF
 
 Setup completed successfully! 🎉
 
