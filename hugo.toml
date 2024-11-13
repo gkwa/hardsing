@@ -1,0 +1,7 @@
+baseURL = "https://gkwa.github.io/hardsing/"
+title = "My New Hugo Site"
+theme = "PaperMod"
+
+[params]
+homeInfoParams = { Title = "Welcome 👋", Content = "My Hugo blog" }
+

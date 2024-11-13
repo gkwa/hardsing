@@ -31,25 +31,8 @@ jobs:
           # Build site directly in repo root
           hugo new site . --force
           git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-          cat > hugo.toml <<EOF
-          baseURL = "https://gkwa.github.io/hardsing/"
-          title = "My New Hugo Site"
-          theme = "PaperMod"
-
-          [params]
-          homeInfoParams = { Title = "Welcome 👋", Content = "My Hugo blog" }
-          EOF
-          # Create test content
-          hugo new content posts/my-first-post.md
-          echo '---
-          title: "My First Post"
-          date: 2024-11-13
-          ---
-          Welcome to my first post!' > content/posts/my-first-post.md
-
           # Build site
           hugo --minify
-
           # Add .nojekyll to public
           touch public/.nojekyll
       - name: Upload artifact
@@ -67,3 +50,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
