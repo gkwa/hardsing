@@ -21,18 +21,61 @@ rm -f config.toml
 # Create comprehensive hugo.toml configuration
 cat >hugo.toml <<'EOF'
 baseURL = "http://localhost:1313/"
-languageCode = "en-us"
 title = "My New Hugo Site"
-theme = "ananke"
-themesDir = "themes"
-SectionPagesMenu = "main"
+paginate = 5
+theme = "PaperMod"
 
-[pagination]
-  pagerSize = 3
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+disableXML = true
+minifyOutput = true
 
 [params]
-  text_color = "dark-gray"
-  recent_posts_number = 3
+env = "production"
+title = "My Hugo Site"
+description = "My new hugo site"
+keywords = ["Blog", "Portfolio", "PaperMod"]
+author = "Me"
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+
+  [params.homeInfoParams]
+  Title = "Welcome 👋"
+  Content = "My Hugo blog"
+
+  [params.profileMode]
+  enabled = false
+  title = "PaperMod"
+  subtitle = "Welcome to my blog"
+  
+  [[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/"
+
+  [[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/"
+
+[menu]
+main = [
+    {identifier = "categories", name = "categories", url = "/categories/", weight = 10},
+    {identifier = "tags", name = "tags", url = "/tags/", weight = 20},
+    {identifier = "archives", name = "archives", url = "/archives/", weight = 30},
+    {identifier = "search", name = "search", url = "/search/", weight = 40},
+]
 EOF
 
 # Initialize git repository
@@ -45,8 +88,8 @@ resources/
 .hugo_build.lock
 EOF
 
-# Add theme (Ananke)
-git submodule add --depth=1 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+# Add theme (PaperMod)
+git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
 
 # Create initial content
 mkdir -p content/{posts,about}
@@ -68,9 +111,30 @@ cat >content/posts/my-first-post.md <<EOF
 title: "My First Post"
 date: ${CURRENT_DATE}
 draft: false
+summary: "Welcome to my first post!"
+tags: ["first"]
+categories: ["blog"]
 ---
 
-This is my first post using Hugo!
+This is my first post using Hugo with PaperMod theme!
+EOF
+
+# Create search page
+cat >content/search.md <<EOF
+---
+title: "Search"
+layout: "search"
+---
+EOF
+
+# Create archives page
+cat >content/archives.md <<EOF
+---
+title: "Archives"
+layout: "archives"
+url: "/archives/"
+summary: archives
+---
 EOF
 
 # Clean any existing generated files
@@ -83,7 +147,7 @@ hugo --minify
 git add .
 git config user.email "you@example.com"
 git config user.name "Your Name"
-git commit -m "Initial Hugo site with Ananke theme"
+git commit -m "Initial Hugo site with PaperMod theme"
 
 # Print success message and next steps
 echo "
