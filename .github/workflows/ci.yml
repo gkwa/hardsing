@@ -1,21 +1,16 @@
 name: Deploy Hugo site to Pages
-
-on:
+"on":
   push:
     branches:
       - master
-
-  workflow_dispatch:
-
+  workflow_dispatch: null
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +23,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: latest
           extended: true
       - name: Setup Pages
         id: pages
@@ -48,7 +43,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./my-hugo-site/public
-
   deploy:
     environment:
       name: github-pages

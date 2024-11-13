@@ -108,6 +108,21 @@ categories: ["blog"]
 This is my first post using Hugo with PaperMod theme!
 EOF
 
+
+cat >content/posts/my-second-post.md <<EOF
+---
+title: "My second Post"
+date: ${CURRENT_DATE}
+draft: false
+summary: "Welcome to my second post!"
+tags: ["second"]
+categories: ["blog"]
+---
+
+This is my first post using Hugo with PaperMod theme!
+EOF
+
+
 # Create search page
 cat >content/search.md <<EOF
 ---
@@ -134,5 +149,3 @@ git add .
 git config user.email "you@example.com"
 git config user.name "Your Name"
 git commit -m "Initial Hugo site with PaperMod theme"
-
-exit 0
