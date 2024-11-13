@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
-
 set -euo pipefail
 
-git submodule foreach --recursive git status --porcelain
+SITE_NAME="${1:-my-hugo-site}"
 
-git submodule foreach --recursive git reset --hard
-
-git submodule foreach --recursive git clean --directory --force --exclude
-
-git submodule update --init --recursive
+rm -rf "$SITE_NAME"

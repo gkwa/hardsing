@@ -2,7 +2,6 @@
 
 Claude.ai teaches me how to get started with hugo
 
-
 ## Prerequisites
 
 - Hugo installed
