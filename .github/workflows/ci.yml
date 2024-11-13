@@ -13,9 +13,6 @@ permissions:
 concurrency:
   group: pages
   cancel-in-progress: false
-defaults:
-  run:
-    shell: bash
 jobs:
   build:
     name: Build & Test
@@ -31,7 +28,6 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@16361eb4acea8698b220b76c0d4e84e1fd22c61d # v2
         with:
-          hugo-version: latest
           extended: true
       - name: Build
         run: |
