@@ -1,5 +1,5 @@
 name: Deploy Hugo site
-true:
+"on":
   push:
     branches:
       - "*"

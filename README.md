@@ -92,4 +92,3 @@ Edit hugo.toml to customize:
 - Theme settings
 - Navigation
 - Pagination
-
