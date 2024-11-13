@@ -19,8 +19,8 @@ cd "${SITE_NAME}"
 rm -f config.toml
 
 # Create comprehensive hugo.toml configuration
-cat >hugo.toml <<'EOF'
-baseURL = "https://gkwa.github.io/hardsing/"
+cat >hugo.toml <<EOF
+baseURL = "https://gkwa.github.io/hardsing/my-hugo-site/"
 title = "My New Hugo Site"
 theme = "PaperMod"
 
@@ -151,33 +151,4 @@ git config user.email "you@example.com"
 git config user.name "Your Name"
 git commit -m "Initial Hugo site with PaperMod theme"
 
-# Print success message and next steps
-cat <<EOF
-
-Setup completed successfully! 🎉
-
-Your new Hugo site '${SITE_NAME}' is ready.
-
-To start the development server:
-  cd ${SITE_NAME}/
-  hugo server --buildDrafts --buildFuture --navigateToChanged --bind=0.0.0.0 --port=1313
-
-Your site will be available at:
-  http://localhost:1313/
-
-Directory structure:
-EOF
-
-# Show directory structure
-tree -L 2
-
-cat <<'EOF'
-
-Remember to:
-1. Edit content in content/posts/ and content/about/
-2. Customize hugo.toml for additional settings
-3. Add more content using: hugo new content posts/new-post.md
-4. Update git config with your email and name:
-   git config user.email "your.email@example.com"
-   git config user.name "Your Name"
-EOF
+exit 0
