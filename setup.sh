@@ -108,7 +108,6 @@ categories: ["blog"]
 This is my first post using Hugo with PaperMod theme!
 EOF
 
-
 cat >content/posts/my-second-post.md <<EOF
 ---
 title: "My second Post"
@@ -121,7 +120,6 @@ categories: ["blog"]
 
 This is my first post using Hugo with PaperMod theme!
 EOF
-
 
 # Create search page
 cat >content/search.md <<EOF
