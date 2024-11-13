@@ -49,7 +49,7 @@ UseHugoToc = true
   enabled = false
   title = "PaperMod"
   subtitle = "Welcome to my blog"
-  
+
   [[params.socialIcons]]
   name = "github"
   url = "https://github.com/"
