@@ -5,8 +5,8 @@ Scripts to learn how to use hugo.
 View the source code:
 
 - [repo](https://github.com/gkwa/hardsing)
-- [setup script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/setup) - Creates new Hugo site with theme and initial content
-- [teardown script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/teardown) - Removes Hugo site directory
+- [setup.sh script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/setup.sh) - Creates new Hugo site with theme and initial content
+- [teardown.sh script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/teardown.sh) - Removes Hugo site directory
 
 ## Prerequisites
 
@@ -20,13 +20,13 @@ View the source code:
 Create new site:
 
 ```bash
-./setup my-site-name
+./setup.sh my-site-name
 ```
 
 Remove site:
 
 ```bash
-./teardown my-site-name
+./teardown.sh my-site-name
 ```
 
 Site name parameter is optional and defaults to "my-hugo-site"
@@ -58,7 +58,7 @@ Site name parameter is optional and defaults to "my-hugo-site"
 Create site:
 
 ```bash
-./setup [site-name]
+./setup.sh [site-name]
 ```
 
 Start dev server:
@@ -87,7 +87,7 @@ Push to main branch for automatic GitHub Pages deployment
 Remove site:
 
 ```bash
-./teardown [site-name]
+./teardown.sh [site-name]
 ```
 
 ## Configuration
@@ -98,7 +98,3 @@ Edit hugo.toml to configure:
 - Theme settings
 - Navigation menu
 - Content pagination
-
-```
-
-```
