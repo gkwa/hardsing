@@ -15,12 +15,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
-    name: Build & Test
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
@@ -31,6 +26,8 @@ jobs:
           extended: true
       - name: Build
         run: |
+          # Create .nojekyll file at repo root
+          touch .nojekyll
           bash ./setup.sh my-hugo-site
           cd my-hugo-site
           hugo --minify
