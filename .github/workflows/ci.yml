@@ -28,10 +28,13 @@ jobs:
         run: |
           # Create .nojekyll file at repo root
           touch .nojekyll
+          # Update baseURL in hugo.toml
           bash ./setup.sh my-hugo-site
           cd my-hugo-site
-          hugo --minify
-          touch public/.nojekyll  # Add this line to prevent Jekyll processing
+          pwd
+          ls -la
+          hugo --minify --baseURL "https://gkwa.github.io/hardsing/"
+          touch public/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:

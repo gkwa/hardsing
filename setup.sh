@@ -20,7 +20,7 @@ rm -f config.toml
 
 # Create comprehensive hugo.toml configuration
 cat >hugo.toml <<EOF
-baseURL = "https://gkwa.github.io/hardsing/"
+baseURL = "https://gkwa.github.io/hardsing/my-hugo-site/"  # Change to match your GitHub Pages URL
 title = "My New Hugo Site"
 theme = "PaperMod"
 
