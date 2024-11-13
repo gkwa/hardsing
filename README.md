@@ -1,6 +1,6 @@
 # Hugo Site Generator Scripts
 
-Scripts to automate creating and managing Hugo static sites with GitHub Pages deployment.
+Scripts to learn how to use hugo.
 
 View the source code:
 
