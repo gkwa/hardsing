@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+
+# Exit on error, undefined variables, and prevent pipe errors
+set -euo pipefail
+
+# Site name from argument or default
+SITE_NAME="${1:-my-hugo-site}"
+
+# Get current date in Hugo-compatible format
+CURRENT_DATE=$(date +%Y-%m-%dT%H:%M:%S%z)
+
+# Create a new directory for your Hugo project with TOML config
+hugo new site "${SITE_NAME}" --format=toml
+
+# Move into the project directory
+cd "${SITE_NAME}"
+
+# Remove config.toml if it exists (we'll use hugo.toml)
+rm -f config.toml
+
+# Create comprehensive hugo.toml configuration
+cat >hugo.toml <<'EOF'
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "ananke"
+themesDir = "themes"
+SectionPagesMenu = "main"
+
+[pagination]
+  pagerSize = 3
+
+[params]
+  text_color = "dark-gray"
+  recent_posts_number = 3
+EOF
+
+# Initialize git repository
+git init --initial-branch=main
+
+# Create initial .gitignore
+cat >.gitignore <<'EOF'
+public/
+resources/
+.hugo_build.lock
+EOF
+
+# Add theme (Ananke)
+git submodule add --depth=1 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+
+# Create initial content
+mkdir -p content/{posts,about}
+
+# Create about page
+cat >content/about/index.md <<EOF
+---
+title: "About"
+date: ${CURRENT_DATE}
+draft: false
+---
+
+This is my Hugo website's about page.
+EOF
+
+# Create first post
+cat >content/posts/my-first-post.md <<EOF
+---
+title: "My First Post"
+date: ${CURRENT_DATE}
+draft: false
+---
+
+This is my first post using Hugo!
+EOF
+
+# Clean any existing generated files
+rm -rf public/ resources/ .hugo_build.lock
+
+# Initial build
+hugo --minify
+
+# Initialize git repository and commit
+git add .
+git config user.email "you@example.com"
+git config user.name "Your Name"
+git commit -m "Initial Hugo site with Ananke theme"
+
+# Print success message and next steps
+echo "
+Setup completed successfully! 🎉
+
+Your new Hugo site '${SITE_NAME}' is ready.
+
+To start the development server:
+  hugo server --buildDrafts --buildFuture --navigateToChanged --bind=0.0.0.0 --port=1313
+
+Your site will be available at:
+  http://localhost:1313/
+
+Directory structure:
+"
+
+# Show directory structure
+tree -L 2
+
+echo '
+Remember to:
+1. Edit content in content/posts/ and content/about/
+2. Customize hugo.toml for additional settings
+3. Add more content using: hugo new content posts/new-post.md
+4. Update git config with your email and name:
+   git config user.email "your.email@example.com"
+   git config user.name "Your Name"
+'
