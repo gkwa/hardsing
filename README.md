@@ -14,14 +14,16 @@ Claude.ai teaches me how to get started with hugo
 Create new site:
 
 ```bash
-./setup my-site
+./setup my-site-name
 ```
 
-Clean/reset submodules:
+Remove site:
 
 ```bash
-./teardown
+./teardown my-site-name
 ```
+
+The site name parameter is optional for both commands. If omitted, defaults to "my-hugo-site"
 
 ## Features
 
@@ -30,7 +32,7 @@ Clean/reset submodules:
 - GitHub Actions workflow for deployment
 - Just commands for formatting
 - Example content pages created automatically
-- Submodule cleanup utilities
+- Simple site cleanup/removal
 
 ## Directory Structure
 
@@ -56,12 +58,14 @@ Clean/reset submodules:
 2. Start development server:
 
 ```bash
+cd [site-name]
 hugo server --buildDrafts --buildFuture --navigateToChanged --bind=0.0.0.0 --port=1313
 ```
 
 3. Add content:
 
 ```bash
+cd [site-name]
 hugo new content posts/new-post.md
 ```
 
@@ -74,6 +78,12 @@ just fmt
 5. Deploy:
    Push to main branch and GitHub Actions will deploy to Pages
 
+6. Remove site:
+
+```bash
+./teardown [site-name]
+```
+
 ## Configuration
 
 Edit hugo.toml to customize:
@@ -82,3 +92,4 @@ Edit hugo.toml to customize:
 - Theme settings
 - Navigation
 - Pagination
+
