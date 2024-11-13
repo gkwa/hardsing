@@ -20,12 +20,12 @@ rm -f config.toml
 
 # Create comprehensive hugo.toml configuration
 cat >hugo.toml <<EOF
-baseURL = "https://gkwa.github.io/hardsing/my-hugo-site/"
+baseURL = "https://gkwa.github.io/hardsing/"
 title = "My New Hugo Site"
 theme = "PaperMod"
 
 [pagination]
-  pagerSize = 5
+ pagerSize = 5
 
 enableRobotsTXT = true
 buildDrafts = false
@@ -54,29 +54,29 @@ ShowWordCount = true
 ShowRssButtonInSectionTermList = true
 UseHugoToc = true
 
-  [params.homeInfoParams]
-  Title = "Welcome 👋"
-  Content = "My Hugo blog"
+ [params.homeInfoParams]
+ Title = "Welcome 👋"
+ Content = "My Hugo blog"
 
-  [params.profileMode]
-  enabled = false
-  title = "PaperMod"
-  subtitle = "Welcome to my blog"
-  
-  [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/"
+ [params.profileMode]
+ enabled = false
+ title = "PaperMod"
+ subtitle = "Welcome to my blog"
+ 
+ [[params.socialIcons]]
+ name = "github"
+ url = "https://github.com/"
 
-  [[params.socialIcons]]
-  name = "twitter"
-  url = "https://twitter.com/"
+ [[params.socialIcons]]
+ name = "twitter"
+ url = "https://twitter.com/"
 
 [menu]
 main = [
-    {identifier = "categories", name = "categories", url = "/categories/", weight = 10},
-    {identifier = "tags", name = "tags", url = "/tags/", weight = 20},
-    {identifier = "archives", name = "archives", url = "/archives/", weight = 30},
-    {identifier = "search", name = "search", url = "/search/", weight = 40},
+   {identifier = "categories", name = "categories", url = "/categories/", weight = 10},
+   {identifier = "tags", name = "tags", url = "/tags/", weight = 20},
+   {identifier = "archives", name = "archives", url = "/archives/", weight = 30},
+   {identifier = "search", name = "search", url = "/search/", weight = 40},
 ]
 EOF
 
