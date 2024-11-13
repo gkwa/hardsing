@@ -1,10 +1,17 @@
 # Hugo Site Generator Scripts
 
-Claude.ai teaches me how to get started with hugo
+Scripts to automate creating and managing Hugo static sites with GitHub Pages deployment.
+
+View the source code:
+
+- [setup script](https://raw.githubusercontent.com/gkwa/hardsing/refs/heads/master/setup) - Creates new Hugo site with theme and initial content
+- [teardown script](https://github.com/gkwa/hardsing?tab=readme-ov-file#hugo-site-generator-scripts) - Removes Hugo site directory
+
+Original repository: https://github.com/axelerator/claude.ai-learning-hugo
 
 ## Prerequisites
 
-- Hugo installed
+- Hugo extended version installed
 - Git installed
 - Tree command installed
 - Just command runner (optional)
@@ -23,22 +30,22 @@ Remove site:
 ./teardown my-site-name
 ```
 
-The site name parameter is optional for both commands. If omitted, defaults to "my-hugo-site"
+Site name parameter is optional and defaults to "my-hugo-site"
 
 ## Features
 
 - Automated Hugo site creation with Ananke theme
-- Git initialization with proper .gitignore
-- GitHub Actions workflow for deployment
-- Just commands for formatting
-- Example content pages created automatically
-- Simple site cleanup/removal
+- Git initialization and configuration
+- GitHub Actions CI/CD workflow
+- Just commands for code formatting
+- Example content pages
+- Simple site cleanup
 
 ## Directory Structure
 
 ```
 .
-├── .github/workflows/   # GitHub Actions workflows
+├── .github/workflows/   # CI/CD configuration
 ├── content/            # Site content
 │   ├── about/         # About page
 │   └── posts/         # Blog posts
@@ -49,36 +56,36 @@ The site name parameter is optional for both commands. If omitted, defaults to "
 
 ## Usage
 
-1. Create new site:
+Create site:
 
 ```bash
 ./setup [site-name]
 ```
 
-2. Start development server:
+Start dev server:
 
 ```bash
 cd [site-name]
 hugo server --buildDrafts --buildFuture --navigateToChanged --bind=0.0.0.0 --port=1313
 ```
 
-3. Add content:
+Add content:
 
 ```bash
 cd [site-name]
 hugo new content posts/new-post.md
 ```
 
-4. Format code:
+Format code:
 
 ```bash
 just fmt
 ```
 
-5. Deploy:
-   Push to main branch and GitHub Actions will deploy to Pages
+Deploy:
+Push to main branch for automatic GitHub Pages deployment
 
-6. Remove site:
+Remove site:
 
 ```bash
 ./teardown [site-name]
@@ -86,9 +93,13 @@ just fmt
 
 ## Configuration
 
-Edit hugo.toml to customize:
+Edit hugo.toml to configure:
 
-- Site title
+- Site title and metadata
 - Theme settings
-- Navigation
-- Pagination
+- Navigation menu
+- Content pagination
+
+```
+
+```
