@@ -152,7 +152,8 @@ git config user.name "Your Name"
 git commit -m "Initial Hugo site with PaperMod theme"
 
 # Print success message and next steps
-echo "
+cat <<'EOF'
+
 Setup completed successfully! 🎉
 
 Your new Hugo site '${SITE_NAME}' is ready.
@@ -165,12 +166,13 @@ Your site will be available at:
   http://localhost:1313/
 
 Directory structure:
-"
+EOF
 
 # Show directory structure
 tree -L 2
 
-echo '
+cat <<'EOF'
+
 Remember to:
 1. Edit content in content/posts/ and content/about/
 2. Customize hugo.toml for additional settings
@@ -178,9 +180,4 @@ Remember to:
 4. Update git config with your email and name:
    git config user.email "your.email@example.com"
    git config user.name "Your Name"
-'
-$()$(
-
-    And the README.md should be updated to reflect the theme change from Ananke to PaperMod:
-
-)$()text
+EOF
