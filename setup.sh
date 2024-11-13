@@ -108,7 +108,7 @@ categories: ["blog"]
 This is my first post using Hugo with PaperMod theme!
 EOF
 
-# Create first post
+# Create second post
 cat >content/posts/my-second-post.md <<EOF
 ---
 title: "My second Post"
