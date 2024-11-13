@@ -156,6 +156,7 @@ Setup completed successfully! 🎉
 Your new Hugo site '${SITE_NAME}' is ready.
 
 To start the development server:
+  cd ${SITE_NAME}/
   hugo server --buildDrafts --buildFuture --navigateToChanged --bind=0.0.0.0 --port=1313
 
 Your site will be available at:
